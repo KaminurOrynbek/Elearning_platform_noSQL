@@ -1,0 +1,44 @@
+.admin-users {
+  padding: 20px;
+  width: 100%;
+  height: 100vh; /* Make the frame full screen */
+  box-sizing: border-box;
+}
+
+.admin-users h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.admin-users table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.admin-users table th,
+.admin-users table td {
+  padding: 10px;
+  text-align: left;
+  border: none; /* Remove the border */
+}
+
+.admin-users table th {
+  background-color: #f4f4f4;
+}
+
+.admin-users table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.common-btn {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.common-btn:hover {
+  background-color: #0056b3;
+}
