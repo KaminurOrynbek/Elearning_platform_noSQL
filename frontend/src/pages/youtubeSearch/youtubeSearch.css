@@ -1,0 +1,93 @@
+.youtube-search {
+  padding: 60px 20px;
+  text-align: center;
+  min-height: 70vh;
+  background-color: #f9f9f9;
+}
+
+.youtube-title {
+  font-size: 32px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.youtube-form {
+  margin-bottom: 30px;
+}
+
+.youtube-input {
+  padding: 10px;
+  width: 60%;
+  max-width: 400px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  margin-right: 10px;
+  font-size: 16px;
+}
+
+.youtube-button {
+  padding: 10px 20px;
+  background-color: #8a4baf;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.youtube-button:hover {
+  background-color: #732d91;
+}
+
+.youtube-video-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.youtube-video-card {
+  width: 300px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.youtube-video-card:hover {
+  transform: translateY(-5px);
+}
+
+.youtube-thumbnail {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.youtube-video-title {
+  font-size: 18px;
+  color: #222;
+  margin: 10px;
+}
+
+.youtube-video-description {
+  font-size: 14px;
+  color: #666;
+  margin: 0 10px 10px;
+}
+
+.youtube-link {
+  display: block;
+  text-align: center;
+  padding: 10px;
+  color: #8a4baf;
+  font-weight: bold;
+  text-decoration: none;
+  background-color: #f4f4f4;
+  border-top: 1px solid #ddd;
+}
+
+.youtube-link:hover {
+  background-color: #eaeaea;
+}
