@@ -116,6 +116,48 @@ export const getYourProgress = TryCatch(async (req, res) => {
   });
 });
 
+export const aggregateCourseData = TryCatch(async (req, res) => {
+  const pipeline = [
+    { $unwind: "$students" },
+    {
+      $group: {
+        _id: "$_id",
+        title: { $first: "$title" },
+        description: { $first: "$description" },
+        createdBy: { $first: "$createdBy" },
+        duration: { $first: "$duration" },
+        category: { $first: "$category" },
+        studentCount: { $sum: 1 }
+      }
+    },
+    {
+      $project: {
+        _id: 1,
+        title: 1,
+        description: 1,
+        createdBy: 1,
+        duration: 1,
+        category: 1,
+        studentCount: 1
+      }
+    },
+    {
+      $bucket: {
+        groupBy: "$duration",
+        boundaries: [0, 5, 10, 15, 20],
+        default: "Other",
+        output: {
+          count: { $sum: 1 },
+          courses: { $push: "$$ROOT" }
+        }
+      }
+    },
+    { $out: "bucketedCourses" }
+  ];
+
+  const result = await Courses.aggregate(pipeline);
+  res.json(result);
+});
 
 export const queryEfficiency = TryCatch(async (req, res) => {
   const query = { title: "Advanced MongoDB" };
